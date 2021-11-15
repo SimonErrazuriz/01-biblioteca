@@ -1,0 +1,28 @@
+###
+GET http://localhost:3000/api/libros
+
+###
+GET http://localhost:3000/api/libros/6188784639845f5109bd9e6e
+
+###
+POST http://localhost:3000/api/libros
+Content-Type: application/json
+
+{
+"title": "asd",
+"author": "asd",
+"genre": "asd",
+"editorial": "asd",
+"year": 1988
+}
+
+###
+PUT http://localhost:3000/api/libros/6188784639845f5109bd9e6e
+Content-Type: application/json
+
+{
+"year": 1999
+}
+
+###
+DELETE http://localhost:3000/api/libros/61887df06117273f4ff9659c
