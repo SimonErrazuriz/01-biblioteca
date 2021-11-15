@@ -2,6 +2,8 @@
     <div class="col-md-4">
         <div class="card">
             <div class="card-body">
+                <h1 *ngIf='!libroForm.value._id'>Guardar libro</h1>
+                <h1 *ngIf='libroForm.value._id'>Editar libro</h1>
                 <form #libroForm="ngForm" (ngSubmit)="addLibro(libroForm)">
                     <div class="form-group">
                         <input type="hidden" name="_id" [(ngModel)]="libroSelected._id" class="form-control">
