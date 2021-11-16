@@ -11,28 +11,28 @@
                     <div class="form-group">
                         <input type="text" name="title" #title="ngModel" [(ngModel)]="libroSelected.title"
                             class="form-control" placeholder="Ingresa el título" required>
-                        <span *ngIf="title.touched && title.invalid">El título es obligatorio</span>
+                        <span *ngIf="title.touched && title.invalid" class="form-error">El título es obligatorio</span>
                     </div>
                     <div class="form-group">
                         <input type="text" name="author" #author="ngModel" [(ngModel)]="libroSelected.author"
                             class="form-control" placeholder="Ingresa el autor" required>
-                        <span *ngIf="author.touched && author.invalid">El autor es obligatorio</span>
+                        <span *ngIf="author.touched && author.invalid" class="form-error">El autor es obligatorio</span>
                     </div>
                     <div class="form-group">
                         <input type="text" name="genre" #genre="ngModel" [(ngModel)]="libroSelected.genre"
                             class="form-control" placeholder="Ingresa el género" required>
-                        <span *ngIf="genre.touched && genre.invalid">El género es obligatorio</span>
+                        <span *ngIf="genre.touched && genre.invalid" class="form-error">El género es obligatorio</span>
 
                     </div>
                     <div class="form-group">
                         <input type="text" name="editorial" #editorial="ngModel" [(ngModel)]="libroSelected.editorial" class="form-control"
                             placeholder="Ingresa la editorial" required>
-                            <span *ngIf="editorial.touched && editorial.invalid">La editorial es obligatoria</span>
+                            <span *ngIf="editorial.touched && editorial.invalid" class="form-error">La editorial es obligatoria</span>
                     </div>
                     <div class="form-group">
                         <input type="number" name="year" #year="ngModel" [(ngModel)]="libroSelected.year" class="form-control"
                             placeholder="Ingresa el año" required>
-                            <span *ngIf="year.touched && year.invalid">El año es obligatorio</span>
+                            <span *ngIf="year.touched && year.invalid" class="form-error">El año es obligatorio</span>
                     </div>
 
                     <button *ngIf="!libroForm.value._id" class="btn btn-secondary">Guardar</button>
