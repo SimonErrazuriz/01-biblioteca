@@ -20,6 +20,7 @@ export class LibrosComponent implements OnInit {
     editorial: '',
     year: ''
   };
+  public status!: string;
 
   constructor(public librosService: LibrosService) { }
 
@@ -40,25 +41,39 @@ export class LibrosComponent implements OnInit {
   }
 
   addLibro(libroForm: NgForm) {
+
     if (libroForm.value._id) {
       this.librosService.editLibro(libroForm.value).subscribe(
         res => {
+          this.status = "success edit";
           console.log(res);
           this.getLibros();
           libroForm.reset();
         },
-        err => console.log(err)
+        err => {
+          console.log(err);
+          this.status = "failed";
+        }
       );
 
     } else {
       libroForm.controls['_id'].reset();
       this.librosService.addLibro(libroForm.value).subscribe(
         res => {
+          if(res){
+          this.status = "success save";
           console.log(res);
           this.getLibros();
           libroForm.reset();
+        } else {
+          this.status = "failed";
+
+        }
         },
-        err => console.log(err)
+        err => {
+          console.log(err);
+          this.status = "failed";
+        }
       );
     }
   }

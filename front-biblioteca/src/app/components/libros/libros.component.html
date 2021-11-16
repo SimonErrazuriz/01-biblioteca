@@ -29,9 +29,13 @@
                             placeholder="Ingresa el año">
                     </div>
 
-                    <button class="btn btn-secondary">Guardar</button>
+                    <button *ngIf="!libroForm.value._id" class="btn btn-secondary">Guardar</button>
+                    <button *ngIf="libroForm.value._id" class="btn btn-secondary">Editar</button>
                     <button class="btn btn-primary mr-2" (click)="resetForm(libroForm)">Limpiar</button>
                 </form>
+                <div *ngIf="status == 'success save'">Guardado</div>
+                <div *ngIf="status == 'success edit'">Editado</div>
+                <span *ngIf="status == 'failed'">Error al guardar</span>
             </div>
         </div>
     </div>
